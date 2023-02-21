@@ -1,0 +1,13 @@
+FUNCTION isPalindrome(mot : STRING[100]) : BOOLEAN //ici nous avons notre fonction avec la variable mot qui est nôtre chaîne de caractères.
+BEGIN
+    IF (mot.lenght <=1) THEN // nous vérifions si la longueur de notre chaîne est inférieure ou égal à 1
+        RETURN TRUE; // si c'est vrai la chaîne est palindrome.
+    ELSE_IF (mot[0] = mot[mot.lenght-1]) THEN // nous vérifions si le premier mot est égal au dernier
+//si oui nous découper la chaîne en de sous chaîne commençant 
+//à la position deux pour exclure le premier et de longueur n-2 pour exclure le dernier
+//et on continue recommence à l'étape 1.
+        RETURN isPalindrome(substr(mot, 2, mot.lenght - 2)); 
+    ELSE
+        RETURN FALSE; // si non elle n'est pas palindrome.
+    END_IF
+END
